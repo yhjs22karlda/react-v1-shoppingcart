@@ -1,9 +1,10 @@
 import Cart from './Cart'
+import './Header.css'
 
 function Header() {
     return (
-        <div className="Header">
-            <img src="vite.svg" alt="bild" />
+        <div className="header">
+            <img src="sherlock.png" alt="bild" />
             <Cart />
         </div>
     )

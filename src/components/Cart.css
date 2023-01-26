@@ -1,0 +1,21 @@
+.cart {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart__text {
+    color:#a94f78;
+    font-weight: bold;
+}
+
+.cart__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 2rem;
+    aspect-ratio: 1;
+}
