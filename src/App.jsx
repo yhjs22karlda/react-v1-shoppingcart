@@ -2,20 +2,36 @@ import Header from './components/Header'
 import Pruduct from './components/Product'
 
 import './App.css'
-import books from './assets/data.js'
+import data from './assets/data.js'
+import {useState} from 'react'
 
 function App() {
-  return (
-    <div className='app'>
-      <Header />
-      <div className='product-container'>
-        <Pruduct title={books[0].title} author={books[0].author} text={books[0].text} />
-        <Pruduct title={books[1].title} author={books[1].author} text={books[1].text} />
-        <Pruduct title={books[2].title} author={books[2].author} text={books[2].text} />
-        <Pruduct title={books[3].title} author={books[3].author} text={books[3].text} />
-      </div>
-    </div>
-  )
+    const [state, setState] = useState([])
+
+    function changeState(id=null, removeI=null) {
+        if(removeI !== null) {
+            setState(prevState => prevState.filter(i => i !== removeI))
+            return
+        }        
+        if (!state.includes(id)) {
+            setState(prevState => [...prevState, id])
+        } else {
+            setState(prevState => [...prevState])
+        }
+    }
+
+    const products = data.map((item, i) => {
+        return <Pruduct key={i} id={i} book={item} state={state} onClick={changeState} />
+    })
+
+    return (
+        <div className='app'>
+            <Header state={state} books={data} onClick={changeState} />
+            <div className='product-container'>
+                {products}
+            </div>
+        </div>
+    )
 }
 
 export default App

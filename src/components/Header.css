@@ -3,9 +3,9 @@
     margin-bottom: 2rem;
     align-items: stretch;
     height: 100px;
-    overflow: hidden;
 }
 
 .header img {
     display: block;
+    height: 100%;
 }
