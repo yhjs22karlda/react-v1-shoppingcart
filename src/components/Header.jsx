@@ -5,7 +5,7 @@ function Header(props) {
     return (
         <div className="header">
             <img src="sherlock.png" alt="bild" />
-            <Cart state={props.state} books={props.books} onClick={props.onClick} />
+            <Cart state={props.state} books={props.books} removeProduct={props.removeProduct} />
         </div>
     )
 }

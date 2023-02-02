@@ -31,9 +31,10 @@
     right: 50%;
     top: 80%;
     width: max-content;
+    max-width: 99vw;
     margin: 0;
     padding: .8rem .4rem;
-    transition: all .5s;
+    transition: opacity .5s;
     /* border: 2px solid blueviolet */
 }
 .cart__list {
@@ -47,7 +48,7 @@
 .hidden {
     /* visibility: hidden; */
     opacity: 0;
-    transition: all .5s;
+    transition: opacity .5s;
 }
 .li-button {
     color: red;

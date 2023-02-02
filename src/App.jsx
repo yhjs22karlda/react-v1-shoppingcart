@@ -8,11 +8,12 @@ import {useState} from 'react'
 function App() {
     const [state, setState] = useState([])
 
-    function changeState(id=null, removeI=null) {
-        if(removeI !== null) {
-            setState(prevState => prevState.filter(i => i !== removeI))
-            return
-        }        
+    function removeProduct(id) {
+        setState(prevState => prevState.filter(i => i !== id))
+
+    }
+
+    function addProduct(id) {
         if (!state.includes(id)) {
             setState(prevState => [...prevState, id])
         } else {
@@ -21,12 +22,12 @@ function App() {
     }
 
     const products = data.map((item, i) => {
-        return <Pruduct key={i} id={i} book={item} state={state} onClick={changeState} />
+        return <Pruduct key={i} id={i} book={item} state={state} addProduct={addProduct} />
     })
 
     return (
         <div className='app'>
-            <Header state={state} books={data} onClick={changeState} />
+            <Header state={state} books={data} removeProduct={removeProduct} />
             <div className='product-container'>
                 {products}
             </div>

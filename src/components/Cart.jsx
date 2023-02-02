@@ -12,7 +12,7 @@ function Cart(props) {
     }
     function handleXClick(e) {
         let removeIndex = Number(e.target.parentElement.dataset.id)
-        props.onClick(null,removeIndex)
+        props.removeProduct(removeIndex)
     }
 
     return (

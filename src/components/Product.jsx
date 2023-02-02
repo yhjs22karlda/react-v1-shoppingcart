@@ -1,6 +1,6 @@
 import './Product.css'
 
-function Product(props) {//{title, author, text}) {
+function Product(props) {
     // console.log(props);
     const {title, author, text} = props.book
     return (
@@ -10,7 +10,7 @@ function Product(props) {//{title, author, text}) {
             <p className='product__text'>{text}</p>
             <button
                 className={`button ${props.state.includes(props.id)?"red":''}`}
-                onClick={() => {props.onClick(props.id,null)}}>Add to cart
+                onClick={() => {props.addProduct(props.id)}}>Add to cart
             </button>
         </div>
     )
